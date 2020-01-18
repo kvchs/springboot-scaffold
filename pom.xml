@@ -235,6 +235,13 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+        <!-- 解决HTML文件在templates下无法识别问题 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

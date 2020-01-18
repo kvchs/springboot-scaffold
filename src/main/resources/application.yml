@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:12345/spring_scaffold?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://localhost:12345/spring_scaffold?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&userAffectRows=true # GMT%2B8
     username: root
     password: 123456
     platform: mysql
