@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:12345/spring_scaffold?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    platform: mysql
+    # 连接池指定spring boot2.0版本默认使用HikariCP，此处替换为Druid
+    # https://www.jianshu.com/p/205b263bca8b
+    hikari:
+      # 连接只读数据库时配置，保证安全
+      read-only: false
+      # 等待连接池分配连接的最大时长(毫秒), 超过时间发生SQLException
+      connection-timeout: 30000
+      # 一个连接idle状态的最大时长，超时就被释放(retired)
+      idle-timeout: 600000
+      # 一个连接的生命时长，超时并且没有被使用就被释放
+      max-lifetime: 1800000
+      # 连接池允许的最大连接数
+      maximum-pool-size: 60
+      minimum-idle: 10
+
+
+
+
+  profiles:
+    active: dev
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 2000
+    database: 0
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1
+        min-idle: 0
+
+logging:
+  path: /Users/chencharley/charleychen/IDEA/springboot-scaffold
+
+mybatis-plus:
+  type-aliases-package: com.charleychen.demo.model
+  mapper-locations: classpath:/mybatis-mappers/*
+  configuration:
+    map-underscore-to-camel-case: true
