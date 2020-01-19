@@ -1,11 +1,13 @@
 package com.charleychen.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
+import lombok.*;
 
 import java.util.Date;
 
+
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class SysUser extends BaseEntity<Long> {
 
     private static final long serialVersionUID = 699165349749156317L;
@@ -23,7 +25,7 @@ public class SysUser extends BaseEntity<Long> {
     private Integer status;
     private String intro;
 
-    public interface Status{
+    public interface Status {
         int DISABLED = 0;
         int VALID = 1;
         int LOCKED = 2;

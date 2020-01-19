@@ -47,3 +47,6 @@ mybatis-plus:
   mapper-locations: classpath:/mybatis-mappers/*
   configuration:
     map-underscore-to-camel-case: true
+
+api:
+  url: /api
