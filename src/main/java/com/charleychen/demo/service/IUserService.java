@@ -6,4 +6,5 @@ public interface IUserService {
 
     int save(SysUser sysUser);
 
+    SysUser getUser(String username);
 }

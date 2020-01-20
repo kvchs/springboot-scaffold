@@ -27,4 +27,9 @@ public class UserServiceImpl implements IUserService {
     public int save(SysUser sysUser) {
         return userDao.saveOption(sysUser);
     }
+
+    @Override
+    public SysUser getUser(String username) {
+        return userDao.getUser(username);
+    }
 }
